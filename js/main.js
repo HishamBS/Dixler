@@ -4,14 +4,8 @@ let $frame = document.querySelector(".frame");
 
 //setting the colors array 
 // let colorsArr = ["red", "black", "blue", "green", "yellow", "teal", "white"];
-var colorsArr = ["AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige","Bisque"
-,"Black","BlanchedAlmond","Blue","BlueViolet","Brown","BurlyWood","CadetBlue","Chartreuse","Chocolate"
-,"Coral","CornflowerBlue","Cornsilk","Crimson","Cyan","DarkBlue","DarkCyan","DarkGoldenRod","DarkGray",
-"DarkGrey","DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen","DarkOrange","DarkOrchid","DarkRed"
-,"DarkSalmon","DarkSeaGreen","DarkSlateBlue","DarkSlateGray","DarkSlateGrey","DarkTurquoise","DarkViolet"
-,"DeepPink","DeepSkyBlue","DimGray","DimGrey","DodgerBlue","FireBrick","FloralWhite","ForestGreen","Fuchsia"
-,"Gainsboro","GhostWhite","Gold","GoldenRod","Gray","Grey","Green","GreenYellow","HoneyDew","HotPink"
-,"IndianRed","Indigo","Ivory","Khaki","Lavender","LavenderBlush","LawnGreen","LemonChiffon","LightBlue"
+var colorsArr = ["red","crimson","yellow","gold","orange","brown","saddlebrown","sienna","blue","navy","teal","green","lime",
+"white","black","grey","cyan","purple","fuchsia","pink","deeppink"
 ];
 //getting the colors div
 let $colors = document.querySelector(".colors");
@@ -43,9 +37,21 @@ $(function () {
     $(".color").click(function () {
          color = $(this).attr("id");
          $("h3").text(color)
-        $("h3").css('color',color)
+        $("h3").css('background',color)
     });
 
+   
+        $("#btnSave").click(function() { 
+            html2canvas($("#widget"), {
+                onrendered: function(canvas) {
+                    theCanvas = canvas;
+                    canvas.toBlob(function(blob) {
+                        saveAs(blob, "pic.png"); 
+                    });
+                }
+            });
+        });
+    
         // for mousedown 
         $(".pxl").mousedown(function (e) {
             //is calling the continious mousedown click
@@ -78,6 +84,8 @@ $(function () {
             }
         });
         }
+
+        
 
     });
 
