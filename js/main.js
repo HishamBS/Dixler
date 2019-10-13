@@ -3,7 +3,7 @@
 let $frame = document.querySelector(".frame");
 
 //setting the colors array 
-let colorsArr = ["red","black","blue","green","yellow","teal"];
+let colorsArr = ["red","black","blue","green","yellow","teal","white"];
 
 //getting the colors div
 let $colors = document.querySelector(".colors");
@@ -28,11 +28,25 @@ for (let i = 0; i < 2144; i++) {
     // $pxl.setAttribute("onclick","style='background-color:red'");
     // $pxl.setAttribute("onmouseenter","style='background-color:red'");
 }
-let $color = document.querySelector('.color')
-let $pxl = document.querySelector(".pxl");
-jQuery(".color").click(function() {
-    var color = jQuery(this).attr("id");
-    alert(contentPanelId);
-});
+$(function() {
+    
+    $(".color").click(function() {
+        let color = $(this).attr("id");
+       
+        $(".pxl").mousedown(function(e) {
+            if (e.which === 1) {
+                $(this).css('background',color)
+            }
+            if (e.which === 3) {
+                document.oncontextmenu =new Function("return false;")
+                $(this).css('background','rgba(184, 184, 184)')
+            }
+
+            
+        });
+    });
+
+})
+
 
 
