@@ -14,13 +14,13 @@ let $colors = document.querySelector(".colors");
 for (let i = 0; i < colorsArr.length; i++) {
     let $color = document.createElement("div");
     $color.setAttribute("class", "color");
-    $color.setAttribute("id", "" + colorsArr[i]);
+    $color.setAttribute("id", "" + colorsArr[i].toUpperCase());
     $color.setAttribute("style", 'background-color:' + colorsArr[i]);
     $colors.appendChild($color);
 }
 
 //adding drawing blocks
-for (let i = 0; i < 2144; i++) {
+for (let i = 0; i < 1770; i++) {
     let $pxl = document.createElement("div");
     $pxl.setAttribute("class", "pxl");
     $pxl.setAttribute("id", "" + i);
@@ -40,7 +40,7 @@ $(function () {
         $("h3").css('background',color)
     });
 
-   
+        //save as png button ... needs html2canvas and saveAs libraries to be called in index.html
         $("#btnSave").click(function() { 
             html2canvas($("#widget"), {
                 onrendered: function(canvas) {
@@ -50,6 +50,11 @@ $(function () {
                     });
                 }
             });
+        });
+
+        $("#clearAll").click(function() {
+            $(".pxl").css('background','rgba(235, 235, 235)')
+            
         });
     
         // for mousedown 
@@ -83,6 +88,21 @@ $(function () {
                 $(this).css('background', 'rgba(206, 205, 205)')
             }
         });
+        }
+
+
+         // for painting the whole page with one color 
+         $(".color").mousedown(function (e) {
+            color = $(this).attr("id");
+            //is calling the continious mousedown click
+            interval = setInterval(paintAll, 500);
+        }).mouseup(function () {
+            clearInterval(interval);
+        });
+
+        //the paint all function
+        function paintAll() {    
+        $(".pxl").css('background', color)
         }
 
         
