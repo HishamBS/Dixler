@@ -3,7 +3,6 @@
 let $frame = document.querySelector(".frame");
 
 //setting the colors array 
-// let colorsArr = ["red", "black", "blue", "green", "yellow", "teal", "white"];
 var colorsArr = ["red","crimson","yellow","gold","orange","brown","saddlebrown","sienna","blue","navy","teal","green","lime",
 "white","black","grey","cyan","purple","fuchsia","pink","deeppink"
 ];
@@ -27,12 +26,9 @@ for (let i = 0; i < 1770; i++) {
     $frame.appendChild($pxl);
 }
 
-
-
 $(function () {
 
     let color;
-    let interval;
     //if color button is pressed
     $(".color").click(function () {
          color = $(this).attr("id");
@@ -52,55 +48,45 @@ $(function () {
             });
         });
 
+        //clear all button
         $("#clearAll").click(function() {
-            $(".pxl").css('background','rgba(235, 235, 235)')
+            $(".pxl").css('background','rgb(235, 235, 235)')
             
         });
     
-        // for mousedown 
-        $(".pxl").mousedown(function (e) {
-            //is calling the continious mousedown click
-            interval = setInterval(performWhileMouseDown, 50);
-        }).mouseup(function () {
-            clearInterval(interval);
-        });
+         //the drawing function
+         $(".pxl").mousedown(function (e) {
 
-        //the continious mousedown function
-        function performWhileMouseDown() {    
-        $(".pxl").hover(function (e) {
+            //for single click
             if (e.which === 1) {
                 $(this).css('background', color)
             }
             //ereaser
             if (e.which === 3) {
                 document.oncontextmenu = new Function("return false;")
-                $(this).css('background', 'rgba(235, 235, 235)')
+                $(this).css('background', 'rgb(235, 235, 235)')
             }
+
+            //for continious clicking
+            $(".pxl").hover(function (e) {
+                if (e.which === 1) {
+                    $(this).css('background', color)
+                }
+                //ereaser
+                if (e.which === 3) {
+                    document.oncontextmenu = new Function("return false;")
+                    $(this).css('background', 'rgb(235, 235, 235)')
+                }
+            });       
+            
         });
-
-        //single mouse click 
-        $(".pxl").mousedown(function (e) {
-            if (e.which === 1) {
-                $(this).css('background', color)
-            }
-            if (e.which === 3) {
-                document.oncontextmenu = new Function("return false;")
-                $(this).css('background', 'rgba(206, 205, 205)')
-            }
-        });
-        }
-
-
+        
          // for painting the whole page with one color 
          $(".color").dblclick(function() {
             color = $(this).attr("id");
             $(".pxl").css('background', color)
 
          });
-        
-
-        
-
         
 
     });
