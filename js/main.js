@@ -92,18 +92,14 @@ $(function () {
 
 
          // for painting the whole page with one color 
-         $(".color").mousedown(function (e) {
+         $(".color").dblclick(function() {
             color = $(this).attr("id");
-            //is calling the continious mousedown click
-            interval = setInterval(paintAll, 500);
-        }).mouseup(function () {
-            clearInterval(interval);
-        });
+            $(".pxl").css('background', color)
 
-        //the paint all function
-        function paintAll() {    
-        $(".pxl").css('background', color)
-        }
+         });
+        
+
+        
 
         
 
