@@ -21,7 +21,7 @@ for (let i = 0; i < colorsArr.length; i++) {
 }
 
 //adding drawing blocks
-for (let i = 0; i < 1770; i++) {
+for (let i = 0; i < 1540; i++) {
     let $pxl = document.createElement("div");
     $pxl.setAttribute("class", "pxl");
     $pxl.setAttribute("id", "" + i);
