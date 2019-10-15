@@ -3,8 +3,10 @@
 let $frame = document.querySelector(".frame");
 
 //setting the colors array 
-var colorsArr = ["red","crimson","yellow","gold","orange","brown","saddlebrown","sienna","blue","navy","teal","green","lime",
-"white","black","grey","cyan","purple","fuchsia","pink","deeppink"
+var colorsArr = ["red","crimson","yellow","gold","orange","brown","saddlebrown",
+"sienna","blue",
+"navy","teal","green","lime",
+"cyan","purple","fuchsia","pink","deeppink","burlywood","bisque","black","grey","lightgrey","white"
 ];
 //getting the colors div
 let $colors = document.querySelector(".colors");
