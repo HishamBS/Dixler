@@ -54,6 +54,13 @@ After we took the class on manipulating the dom , i got the idea of developing t
 
 ---
 
+## Examples for the app uses
+
+![spongebob pixlated](./Screenshots/flag.png)
+![spongebob pixlated](./Screenshots/spb.png)
+
+---
+
  ## References
 
 * FileSaver.js
@@ -61,4 +68,7 @@ https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js
 
 * Html2canvas
  https://github.com/niklasvh/html2canvas/releases/download/0.4.1/html2canvas.js
+
+ * font: VT323
+ https://fonts.googleapis.com/css?family=VT323
 
