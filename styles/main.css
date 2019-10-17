@@ -1,6 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
 body{
     background-image: url("./bg.jpg");
+    /* background-size: cover;
+    background-repeat: no-repeat; */
     margin: 0;
+    font-family: 'VT323', monospace ;
+
 }
 header{
     background-color: black;
@@ -14,6 +20,8 @@ h1,h2,h3 {
     text-align: center;
     color:white;
     text-shadow: 2px 2px black;
+
+
 }
 h3{
     border: 2px solid silver;
@@ -95,6 +103,7 @@ ul{
     border-radius: 9px;
     width: 80px;
     display: inline;
+    font-family: 'VT323', monospace ;
 }
 
 #btnSave:hover,#clearAll:hover{
@@ -108,8 +117,7 @@ ul{
     font-weight: bolder;
     font-size: 16px;
     text-shadow: 1px 1px black;
-
-
+    font-family: 'VT323', monospace ;
 }
 
 .btns{
