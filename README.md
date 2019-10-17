@@ -22,14 +22,18 @@ this was the original sketch
 
 ### User Stories
 
-A user should click on the color to choose it , then click on the frame to draw.
-A user should keep pressing left click for continuous drawing.
+* A user should click on the color to choose it , then click on the frame to draw.
+* A user should keep pressing left click for continuous drawing.
+* A user can click rightmouse button to erase a pixel.
+* A user can double click on a color to fill the whole board with it.
+* A user can click on the clearall button to clear the board.
+* A user can click on the save button to download his painting in his computer.
 
 ---
 
 ## Planning and Development Process
 
-After we took the class on manipulating the dom , i got the idea of developing this application , i was always facinated by pixel art , and i wanted to create something that will benifit all fans of pixel art.
+After we took the class on manipulating the dom , i got the idea of developing this application , i was always facinated by pixel art and retro art styles and retro gaming, and i wanted to create something that will benifit all fans of pixel art.
 
 ### Problem-Solving Strategy
 
